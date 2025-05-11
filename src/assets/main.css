@@ -1,0 +1,26 @@
+@import 'tailwindcss';
+@plugin "daisyui" {
+  themes:
+    light --default,
+    /* dark --prefersdark; */
+  root: ':root';
+  
+ 
+}
+
+@utility btn{
+  @apply rounded-lg;
+}
+
+:root{
+  /* --color-primary: #2FA3A6; */
+  --color-accent: #1077A8;
+  --color-secondary: #BEE2DF;
+  /* --color-base-100: #CFEBE9; */
+}
+
+
+*{
+  scroll-behavior: smooth;
+  font-family: "Montserrat", sans-serif;
+}
