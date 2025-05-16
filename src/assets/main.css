@@ -4,8 +4,12 @@
     light --default,
     /* dark --prefersdark; */
   root: ':root';
-  
- 
+  styled: true;
+  base: true;
+  utils: true;
+  rtl: false;
+  prefix: "";
+  logs: true;
 }
 
 @utility btn{
@@ -13,10 +17,21 @@
 }
 
 :root{
-  /* --color-primary: #2FA3A6; */
-  --color-accent: #1077A8;
-  --color-secondary: #BEE2DF;
-  /* --color-base-100: #CFEBE9; */
+  --color-primary: #c5e6ff;
+  --color-primary-content: #001017;
+  --color-secondary: #4ade80;
+  --color-secondary-content: #052e16;
+  --color-accent: #F78718;
+  --color-accent-content: #FAFDFD;
+  --color-base-100: #15457A;
+  --color-base-200: #1A2B6D;
+  --color-base-content: #FAFDFD;
+  --color-info: #3b82f6;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-success: #10b981;
+  
+  
 }
 
 
@@ -24,3 +39,16 @@
   scroll-behavior: smooth;
   font-family: "Montserrat", sans-serif;
 }
+
+.bg-primary,
+.bg-primary *{
+  color: var(--color-primary-content);
+}
+
+.bg-accent,
+.bg-accent *,
+.btn-accent,
+.btn-accent *{
+  color: var(--color-accent-content);
+}
+

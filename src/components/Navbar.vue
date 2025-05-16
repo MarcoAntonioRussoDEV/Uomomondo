@@ -1,34 +1,27 @@
 <template>
-  <div class="navbar bg-primary shadow-sm sticky top-0 z-10">
-    <div class="flex-1">
-      <a class="btn btn-ghost text-xl text-white">daisyUI</a>
-    </div>
-    <div class="flex gap-2">
-      <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
-      <div class="dropdown dropdown-end">
-        <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-          <div class="w-10 rounded-full">
-            <img
-              alt="Tailwind CSS Navbar component"
-              src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-            />
-          </div>
-        </div>
+  <div class="container mx-auto px-4">
+    <nav class="flex justify-between items-center py-10">
+      <h2 class="text-4xl uppercase font-bold">uomomondo</h2>
+
+      <!-- Menu mobile (visibile solo su schermi < md) -->
+      <details class="dropdown dropdown-end md:hidden">
+        <summary class="btn btn-link no-underline" role="button">Links</summary>
         <ul
-          tabindex="0"
-          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+          class="capitalize menu dropdown-content border border-base-200 rounded-box w-24 z-1 p-2 shadow-xl bg-base-100"
         >
-          <li>
-            <a class="justify-between">
-              Profile
-              <span class="badge">New</span>
-            </a>
-          </li>
-          <li><a>Settings</a></li>
-          <li><a>Logout</a></li>
+          <li>Home</li>
+          <li>About</li>
+          <li>Gallery</li>
         </ul>
-      </div>
-    </div>
+      </details>
+
+      <!-- Menu desktop (visibile solo su schermi >= md) -->
+      <ul class="hidden md:flex gap-6 capitalize text-xl items-center">
+        <li class="cursor-pointer transition-colors">Home</li>
+        <li class="cursor-pointer transition-colors">About</li>
+        <li class="cursor-pointer transition-colors">Gallery</li>
+      </ul>
+    </nav>
   </div>
 </template>
 

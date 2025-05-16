@@ -1,6 +1,6 @@
 <template>
   <Navbar />
-  <div class="flex-1 container mx-auto p-4"><RouterView /></div>
+  <div class="flex-1 container mx-auto"><RouterView /></div>
   <Footer />
 </template>
 

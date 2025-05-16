@@ -1,8 +1,8 @@
 <template>
-  <div class="hero bg-base-200 rounded-lg p-10">
+  <div class="hero rounded-4xl p-10">
     <div class="w-full">
       <h2 class="text-5xl font-bold capitalize text-center">{{ cardTitle }}</h2>
-      <p class="py-6 textc">
+      <p class="py-6">
         <slot />
       </p>
       <button class="btn btn-primary capitalize" v-if="buttonText">{{ buttonText }}</button>
