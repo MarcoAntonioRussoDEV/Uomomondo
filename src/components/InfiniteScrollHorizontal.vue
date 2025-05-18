@@ -15,7 +15,7 @@
                 <img
                   :src="`/images/${logo}`"
                   :alt="`Logo ${index + 1}`"
-                  class="h-full w-full object-contain"
+                  class="h-full w-full object-contain fill-white [&>svg]:fill-white"
                 />
               </li>
             </ul>
@@ -28,12 +28,12 @@
 
 <script>
 const logos = [
-  '1.jpg',
-  '2.jpg',
-  '3.avif',
-  '4.jpg',
+  'ambasciata_di_pace.svg',
+  'csv.svg',
+  'millumino_di_meno.svg',
+  'ottavia.svg',
   '5.png',
-  '6.png',
+  'trash_challenge_foggia.svg',
   '7.png',
   '8.png',
   '9.jpg',

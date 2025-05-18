@@ -2,7 +2,7 @@
   <Section>
     <Hero />
   </Section>
-  <main id="home" class="container">
+  <main id="home" class="container mx-auto px-4">
     <Section>
       <InfiniteScrollHorizontal />
     </Section>
@@ -37,6 +37,29 @@
       </div>
     </Section>
     <Section>
+      <Card
+        cardTitle="Il Progetto"
+        imgSrc="/walk.png"
+        class="bg-primary"
+        button-text="Unisciti a noi"
+        reverse
+      >
+        <p>
+          Il progetto si prefigge di sensibilizzare tutto l’Istituto sulle tematiche relative alla
+          <strong>pace</strong> (ci piace declinare l’educazione alla pace come intercultura,
+          convivenza tra i popoli, cittadinanza attiva, difesa dei diritti dell’uomo, educazione
+          alla corresponsabilità sociale e alla legalità, attenzione all’ambito sociale e
+          all’ambiente, al bene comune, al volontariato, alla solidarietà) e, in particolare, cerca
+          di formare una coscienza critica su questi argomenti nei ragazzi che partecipano al
+          Progetto, affinchè ne diventino promotori presso i loro compagni.
+        </p>
+        <p>
+          Questo per far crescere il livello di cittadinanza attiva e di tutte le competenze di
+          cittadinanza e di educazione civica in generale.
+        </p>
+      </Card>
+    </Section>
+    <Section>
       <CardText cardTitle="Contatti" class="bg-base-200" data-aos="fade-up">
         <div class="flex justify-evenly items-center mt-10">
           <a
@@ -67,7 +90,6 @@ import imgMQ from '@/assets/images/michele-quintana.jpg'
 import { Icon } from '@iconify/vue'
 import CardText from '@/components/CardText.vue'
 import InfiniteScrollHorizontal from '@/components/InfiniteScrollHorizontal.vue'
-
 const professors = [
   {
     name: 'Prof. Michele Quintana',

@@ -17,12 +17,14 @@
 
       <!-- Menu desktop (visibile solo su schermi >= md) -->
       <ul class="hidden md:flex gap-6 capitalize text-xl items-center">
-        <li class="cursor-pointer transition-colors">Home</li>
-        <li class="cursor-pointer transition-colors">About</li>
+        <li class="cursor-pointer transition-colors"><RouterLink to="/">Home</RouterLink></li>
+        <li class="cursor-pointer transition-colors"><RouterLink to="/about">About</RouterLink></li>
         <li class="cursor-pointer transition-colors">Gallery</li>
       </ul>
     </nav>
   </div>
 </template>
 
-<script></script>
+<script>
+import { RouterLink } from 'vue-router'
+</script>

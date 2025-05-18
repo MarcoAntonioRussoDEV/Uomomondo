@@ -4,21 +4,23 @@
     :class="{ 'bg-base-200!': isCollapsed }"
   >
     <div
-      class="flex flex-col isolate gap-4 p-4 relative"
+      class="flex flex-col gap-4 p-4 relative items-center"
       :class="{ 'lg:flex-row-reverse': reverse, 'lg:flex-row': !col }"
     >
-      <picture class="rounded-3xl shadow-2xl overflow-hidden"
+      <picture class="rounded-3xl overflow-hidden min-w-1/3"
         ><img v-if="imgSrc" :src="imgSrc" class="object-contain w-full"
       /></picture>
-      <div>
+      <div class="flex flex-col justify-between">
         <h2 class="text-5xl font-bold capitalize">{{ cardTitle }}</h2>
-        <p class="py-6 text-lg">
+        <div class="py-6 text-lg flex flex-col gap-4">
           <slot />
-        </p>
-        <button class="btn btn-primary capitalize" v-if="buttonText">{{ buttonText }}</button>
+        </div>
+        <button class="btn btn-accent capitalize w-fit rounded-full" v-if="buttonText">
+          {{ buttonText }}
+        </button>
       </div>
     </div>
-    <div class="collapse">
+    <div class="collapse" v-if="collapse">
       <input type="checkbox" class="peer" v-model="isCollapsed" />
       <span class="collapse-title w-fit btn btn-link">
         {{ isCollapsed ? 'Mostra di meno' : 'Mostra di più' }}

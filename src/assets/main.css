@@ -34,6 +34,9 @@
   
 }
 
+html {
+  overflow-y: scroll;
+}
 
 *{
   scroll-behavior: smooth;
