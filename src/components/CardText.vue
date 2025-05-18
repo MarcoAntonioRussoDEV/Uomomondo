@@ -5,7 +5,9 @@
       <p class="py-6">
         <slot />
       </p>
-      <button class="btn btn-primary capitalize" v-if="buttonText">{{ buttonText }}</button>
+      <button class="btn btn-accent capitalize w-full rounded-full" v-if="buttonText">
+        {{ buttonText }}
+      </button>
     </div>
   </div>
 </template>

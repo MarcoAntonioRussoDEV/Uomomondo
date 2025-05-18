@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+
 @plugin "daisyui" {
   themes:
     light --default,
@@ -34,10 +35,6 @@
   
 }
 
-html {
-  overflow-y: scroll;
-}
-
 *{
   scroll-behavior: smooth;
   font-family: "Montserrat", sans-serif;
@@ -53,5 +50,21 @@ html {
 .btn-accent,
 .btn-accent *{
   color: var(--color-accent-content);
+}
+
+/* Transizioni Vue Router */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
 }
 
