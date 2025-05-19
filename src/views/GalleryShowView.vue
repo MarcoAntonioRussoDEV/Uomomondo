@@ -82,7 +82,7 @@ export default {
         // ma poiché stiamo lavorando con file statici in public, dobbiamo conoscere i nomi in anticipo
 
         // Otteniamo tutti i file dalla cartella uomomondo-2023-24
-        const imageBasePath = '/images/uomomondo-2023-24/'
+        const imageBasePath = './images/uomomondo-2023-24/'
 
         // Lista dei file che sappiamo essere presenti nella cartella
         const imageFiles = [

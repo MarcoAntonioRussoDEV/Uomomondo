@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: 'GalleryShowView',
+  name: 'Carousel',
   props: {
     year: {
       type: String,
