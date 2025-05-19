@@ -15,9 +15,13 @@
         <div class="py-6 text-lg flex flex-col gap-4">
           <slot />
         </div>
-        <button class="btn btn-accent capitalize w-fit rounded-full" v-if="buttonText">
+        <RouterLink
+          :to="buttonAction"
+          class="btn btn-accent capitalize w-fit rounded-full"
+          v-if="buttonText"
+        >
           {{ buttonText }}
-        </button>
+        </RouterLink>
       </div>
     </div>
     <div class="collapse" v-if="collapse">
@@ -41,6 +45,10 @@ export default {
       required: true,
     },
     buttonText: {
+      type: String,
+      required: false,
+    },
+    buttonAction: {
       type: String,
       required: false,
     },

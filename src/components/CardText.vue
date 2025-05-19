@@ -5,9 +5,13 @@
       <p class="py-6">
         <slot />
       </p>
-      <button class="btn btn-accent capitalize w-full rounded-full" v-if="buttonText">
+      <RouterLink
+        :to="buttonAction"
+        class="btn btn-accent capitalize w-full rounded-full"
+        v-if="buttonText"
+      >
         {{ buttonText }}
-      </button>
+      </RouterLink>
     </div>
   </div>
 </template>
@@ -24,7 +28,10 @@ export default {
       type: String,
       required: false,
     },
-
+    buttonAction: {
+      type: String,
+      required: false,
+    },
     col: {
       type: Boolean,
       default: false,

@@ -4,7 +4,7 @@
       class="bg-base-200"
       :card-title="'Galleria ' + year"
       button-text="Torna alla galleria"
-      button-link="/gallery"
+      button-action="/gallery"
     >
       <p class="py-6">
         La galleria è un viaggio attraverso le immagini e i temi che hanno caratterizzato il nostro
