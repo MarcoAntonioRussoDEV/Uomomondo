@@ -13,7 +13,7 @@
             >
               <li v-for="(logo, index) in logos" :key="index" class="flex items-center h-24 w-40">
                 <img
-                  :src="`./images/${logo}`"
+                  :src="getLogoPath(logo)"
                   :alt="`Logo ${index + 1}`"
                   class="h-full w-full object-contain fill-white [&>svg]:fill-white"
                 />
@@ -63,6 +63,12 @@ export default {
       clone.setAttribute('aria-hidden', 'true')
       this.$refs.logos.parentNode.appendChild(clone)
     }
+  },
+  methods: {
+    getLogoPath(logoName) {
+      // Per immagini nella cartella public
+      return `${import.meta.env.BASE_URL}images/${logoName}`
+    },
   },
 }
 </script>

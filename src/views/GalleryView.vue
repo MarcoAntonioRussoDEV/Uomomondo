@@ -3,7 +3,7 @@
     <Section>
       <Card
         card-title="Il tema di quest'anno"
-        img-src="./thumb.png"
+        :img-src="thumbImagePath"
         class="bg-primary"
         button-text="galleria completa"
         button-action="gallery/2023-24"
@@ -69,6 +69,7 @@ export default {
   data() {
     return {
       years: years.reverse().slice(1, years.length),
+      thumbImagePath: `${import.meta.env.BASE_URL}thumb.png`,
     }
   },
 }
