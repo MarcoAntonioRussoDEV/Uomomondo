@@ -1,7 +1,7 @@
 <template>
   <div>
     <Section>
-      <Card card-title="Chi siamo" img-src="/cross_arms.png" reverse class="bg-primary">
+      <Card card-title="Chi siamo" img-src="./cross_arms.png" reverse class="bg-primary">
         <p>
           Il progetto nasce dall'impegno della prof.ssa <strong> Maria Fedele</strong>, che nel 2006
           aderisce, per conto dell'Istituto, a una rete di scuole denominata
@@ -29,7 +29,7 @@
     <Section>
       <Card
         card-title="Gli obiettivi"
-        img-src="/point.png"
+        img-src="./point.png"
         class="bg-base-200"
         button-text="Unisciti a noi"
         reverse

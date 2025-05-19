@@ -3,7 +3,7 @@
     <Section>
       <Card
         card-title="Il tema di quest'anno"
-        img-src="/thumb.png"
+        img-src="./thumb.png"
         class="bg-primary"
         button-text="galleria completa"
         button-action="gallery/2023-24"

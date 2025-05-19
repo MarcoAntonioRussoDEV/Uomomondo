@@ -2,7 +2,7 @@
   <Section class="grid place-content-center">
     <Card
       card-title="404"
-      img-src="/questioning.png"
+      img-src="./questioning.png"
       class="bg-primary"
       button-text="Torna alla Home"
       button-action="/"

@@ -40,7 +40,7 @@
       <Section>
         <Card
           cardTitle="Il Progetto"
-          imgSrc="/walk.png"
+          imgSrc="./walk.png"
           class="bg-primary"
           button-text="Unisciti a noi"
           reverse

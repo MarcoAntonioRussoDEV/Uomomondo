@@ -13,7 +13,7 @@
             >
               <li v-for="(logo, index) in logos" :key="index" class="flex items-center h-24 w-40">
                 <img
-                  :src="`/images/${logo}`"
+                  :src="`./images/${logo}`"
                   :alt="`Logo ${index + 1}`"
                   class="h-full w-full object-contain fill-white [&>svg]:fill-white"
                 />
