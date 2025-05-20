@@ -5,7 +5,6 @@
     @click="closeModal"
   >
     <div class="relative max-w-5xl h-full flex items-center" @click.stop>
-      <!-- Controlli carosello -->
       <div class="absolute left-0 top-1/2 -translate-y-1/2 z-10">
         <button
           class="bg-black bg-opacity-50 hover:bg-opacity-70 text-white rounded-full p-2 m-2 transition-all duration-300"
@@ -42,14 +41,12 @@
         </button>
       </div>
 
-      <!-- Immagine principale -->
       <img
         :src="selectedImage"
         :key="currentImageIndex"
         class="max-w-full max-h-[65vh] object-contain mx-auto"
       />
 
-      <!-- Indicatore posizione -->
       <div
         class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white bg-black bg-opacity-50 px-3 py-1 rounded-full"
       >
@@ -57,9 +54,7 @@
       </div>
     </div>
 
-    <!-- Lista scorrevole di miniature - Carosello (posizione fissa in basso) -->
     <div class="w-full mt-auto mb-4 p-2 relative" @click.stop>
-      <!-- Controlli carosello per le miniature -->
       <button
         class="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-black bg-opacity-50 hover:bg-opacity-70 text-white rounded-full p-2 transition-all duration-300"
         @click.stop="prevThumbnailPage"
@@ -131,7 +126,6 @@
         </svg>
       </button>
 
-      <!-- Indicatori di pagina -->
       <div class="flex justify-center mt-2 space-x-2">
         <div
           v-for="(_, index) in thumbnailPages"
@@ -172,7 +166,6 @@ export default {
 
   computed: {
     thumbnailPages() {
-      // Dividi le miniature in pagine di 3 elementi ciascuna
       const pages = []
       const totalImages = this.images.length
 
@@ -189,7 +182,6 @@ export default {
     },
 
     currentPage() {
-      // Trova la pagina che contiene l'immagine corrente
       if (this.currentImageIndex < 0) return 0
 
       return Math.floor(this.currentImageIndex / this.thumbnailsPerPage)
@@ -210,12 +202,10 @@ export default {
   },
 
   created() {
-    // Aggiungiamo i gestori per i tasti freccia
     window.addEventListener('keydown', this.handleKeyDown)
   },
 
   beforeUnmount() {
-    // Rimuoviamo i gestori degli eventi quando il componente viene distrutto
     window.removeEventListener('keydown', this.handleKeyDown)
   },
 
@@ -224,11 +214,9 @@ export default {
       if (this.currentImageIndex < this.images.length - 1) {
         this.currentImageIndex++
       } else {
-        // Torna all'inizio quando si raggiunge l'ultima immagine
         this.currentImageIndex = 0
       }
       this.selectedImage = this.images[this.currentImageIndex]
-      // Aggiorna la pagina corrente del carosello
       this.thumbnailPageIndex = this.currentPage
     },
 
@@ -236,18 +224,15 @@ export default {
       if (this.currentImageIndex > 0) {
         this.currentImageIndex--
       } else {
-        // Vai all'ultima immagine quando si è all'inizio
         this.currentImageIndex = this.images.length - 1
       }
       this.selectedImage = this.images[this.currentImageIndex]
-      // Aggiorna la pagina corrente del carosello
       this.thumbnailPageIndex = this.currentPage
     },
 
     selectImage(index) {
       this.currentImageIndex = index
       this.selectedImage = this.images[index]
-      // Aggiorna la pagina corrente del carosello
       this.thumbnailPageIndex = this.currentPage
     },
 
@@ -259,7 +244,6 @@ export default {
     },
 
     handleKeyDown(event) {
-      // Verifichiamo che la modale sia aperta
       if (this.selectedImage) {
         switch (event.key) {
           case 'ArrowLeft':
@@ -279,7 +263,6 @@ export default {
       if (this.thumbnailPageIndex > 0) {
         this.thumbnailPageIndex--
       } else {
-        // Vai all'ultima pagina
         this.thumbnailPageIndex = this.thumbnailPages.length - 1
       }
     },
@@ -288,7 +271,6 @@ export default {
       if (this.thumbnailPageIndex < this.thumbnailPages.length - 1) {
         this.thumbnailPageIndex++
       } else {
-        // Torna alla prima pagina
         this.thumbnailPageIndex = 0
       }
     },
@@ -301,12 +283,10 @@ export default {
 </script>
 
 <style scoped>
-/* Stili per il carosello delle miniature */
 .overflow-hidden {
   overflow: hidden;
 }
 
-/* Aspect ratio per le miniature */
 .aspect-ratio-box {
   position: relative;
 }
@@ -314,7 +294,7 @@ export default {
 .aspect-ratio-box::before {
   content: '';
   display: block;
-  padding-top: 75%; /* aspect ratio 4:3 */
+  padding-top: 75%;
 }
 
 .aspect-ratio-box img {
@@ -326,7 +306,6 @@ export default {
   object-fit: cover;
 }
 
-/* Transizioni fluide per hover e focus */
 img {
   transition: transform 0.2s ease;
 }
