@@ -18,7 +18,7 @@
     </Section>
     <Section>
       <div class="flex w-full">
-        <Stepper :steps="years" class="px-8" />
+        <Stepper :steps="years" class="px-8 hidden xl:inline-grid" />
         <div class="flex w-full flex-col gap-4">
           <CardText
             v-for="year of years"
