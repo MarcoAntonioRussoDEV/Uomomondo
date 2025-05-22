@@ -24,6 +24,11 @@ const router = createRouter({
       component: () => import('@/views/GalleryShowView.vue'),
       props: true,
     },
+    {
+      path: '/:any(.*)*',
+      name: 'not-found',
+      component: () => import('@/views/NotFoundView.vue'),
+    },
   ],
 })
 

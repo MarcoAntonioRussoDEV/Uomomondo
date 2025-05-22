@@ -4,7 +4,7 @@
       class="bg-base-200"
       :card-title="'Galleria ' + year"
       button-text="Torna alla galleria"
-      button-link="/gallery"
+      button-action="/gallery"
     >
       <p class="py-6">
         La galleria è un viaggio attraverso le immagini e i temi che hanno caratterizzato il nostro
@@ -20,13 +20,8 @@
         {{ error }}
       </div>
 
-      <div v-else class="parent">
-        <div
-          v-for="(image, index) in images"
-          :key="index"
-          class="image-card"
-          :class="divCalculator(index)"
-        >
+      <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div v-for="(image, index) in images" :key="index" class="image-card">
           <img
             :src="image"
             :alt="`Foto ${index + 1}`"
@@ -36,22 +31,12 @@
         </div>
       </div>
 
-      <!-- Modal per visualizzare l'immagine ingrandita -->
-      <div
+      <GalleryModal
         v-if="selectedImage"
-        class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
-        @click="selectedImage = null"
-      >
-        <div class="max-w-4xl max-h-[90vh]">
-          <img :src="selectedImage" class="max-w-full max-h-[90vh] object-contain" />
-          <button
-            class="absolute top-4 right-4 text-white text-3xl"
-            @click.stop="selectedImage = null"
-          >
-            &times;
-          </button>
-        </div>
-      </div>
+        :images="images"
+        :initial-image="selectedImage"
+        @close="closeModal"
+      />
     </Section>
   </Section>
 </template>
@@ -59,12 +44,14 @@
 <script>
 import Section from '@/components/Section.vue'
 import CardText from '@/components/CardText.vue'
+import GalleryModal from '@/components/GalleryModal.vue'
 
 export default {
   name: 'GalleryShowView',
   components: {
     Section,
     CardText,
+    GalleryModal,
   },
   props: {
     year: {
@@ -95,7 +82,7 @@ export default {
         // ma poiché stiamo lavorando con file statici in public, dobbiamo conoscere i nomi in anticipo
 
         // Otteniamo tutti i file dalla cartella uomomondo-2023-24
-        const imageBasePath = '/images/uomomondo-2023-24/'
+        const imageBasePath = `${import.meta.env.BASE_URL}images/uomomondo-2023-24/`
 
         // Lista dei file che sappiamo essere presenti nella cartella
         const imageFiles = [
@@ -140,38 +127,25 @@ export default {
         this.loading = false
       }
     },
-    divCalculator(index) {
-      const gridColumn = index % 3
-
-      return `div${gridColumn}`
-    },
 
     openImage(image) {
       this.selectedImage = image
+    },
+
+    closeModal() {
+      this.selectedImage = null
     },
   },
 }
 </script>
 
 <style scoped>
-.parent {
-  display: grid;
-  gap: 8px;
+/* Hover effect per le miniature nella vista principale */
+.image-card {
+  transition: transform 0.3s ease;
 }
 
-.div0 {
-  grid-row: span 2 / span 2;
-}
-
-.div1 {
-  grid-row: span 2 / span 2;
-  grid-column-start: 2;
-  grid-row-start: 2;
-}
-
-.div2 {
-  grid-row: span 2 / span 2;
-  grid-column-start: 3;
-  grid-row-start: 1;
+.image-card:hover {
+  transform: translateY(-5px);
 }
 </style>

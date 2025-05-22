@@ -24,7 +24,7 @@
 
 <script>
 import { Icon } from '@iconify/vue'
-import headerImage from '/uomomondo.png'
+import headerImage from '@/assets/images/uomomondo.png'
 
 export default {
   name: 'Hero',

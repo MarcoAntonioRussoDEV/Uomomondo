@@ -1,11 +1,13 @@
 <template>
   <div class="container mx-auto px-4">
     <nav class="flex justify-between items-center py-10">
-      <h2 class="text-4xl uppercase font-bold">uomomondo</h2>
+      <h2 class="text-4xl uppercase font-bold"><RouterLink to="/">uomomondo</RouterLink></h2>
 
       <!-- Menu mobile (visibile solo su schermi < md) -->
       <details class="dropdown dropdown-end md:hidden">
-        <summary class="btn btn-link no-underline" role="button">Links</summary>
+        <summary class="btn btn-link no-underline" role="button">
+          <Icon icon="solar:hamburger-menu-linear" class="text-3xl" />
+        </summary>
         <ul
           class="capitalize menu dropdown-content border border-base-200 rounded-box w-auto z-[1] p-2 shadow-xl bg-base-100"
         >
@@ -29,6 +31,15 @@
 
 <script>
 import { RouterLink } from 'vue-router'
+import { Icon } from '@iconify/vue'
+
+export default {
+  name: 'Navbar',
+  components: {
+    RouterLink,
+    Icon,
+  },
+}
 </script>
 
 <style scoped>
@@ -37,5 +48,9 @@ ul > li > a {
 }
 .router-link-exact-active {
   color: var(--color-accent);
+}
+
+h2 .router-link-exact-active {
+  color: inherit;
 }
 </style>

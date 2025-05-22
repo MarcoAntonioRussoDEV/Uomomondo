@@ -3,9 +3,10 @@
     <Section>
       <Card
         card-title="Il tema di quest'anno"
-        img-src="/thumb.png"
-        class="bg-base-200"
+        :img-src="thumbImagePath"
+        class="bg-primary"
         button-text="galleria completa"
+        button-action="gallery/2023-24"
         reverse
       >
         <p>
@@ -25,6 +26,7 @@
             :card-title="year.theme"
             class="bg-base-200 w-full"
             button-text="galleria completa"
+            :button-action="`/gallery/${year.year}`"
           >
             <Carousel class="rounded-4xl" />
           </CardText>
@@ -67,6 +69,7 @@ export default {
   data() {
     return {
       years: years.reverse().slice(1, years.length),
+      thumbImagePath: `${import.meta.env.BASE_URL}thumb.png`,
     }
   },
 }

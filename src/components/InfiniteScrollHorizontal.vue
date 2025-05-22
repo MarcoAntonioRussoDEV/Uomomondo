@@ -96,6 +96,12 @@ export default {
       this.$refs.logos.parentNode.appendChild(clone)
     }
   },
+  methods: {
+    getLogoPath(logoName) {
+      // Per immagini nella cartella public
+      return `${import.meta.env.BASE_URL}images/${logoName}`
+    },
+  },
 }
 </script>
 
